@@ -1,55 +1,25 @@
 ---
-layout: default
-title: Markdown Cheatsheet
-description: Complete Markdown reference for Jekyll & GitHub Pages
+layout: page
+title: 
 permalink: /about/
 ---
 
-# Markdown Cheatsheet (Jekyll + GitHub Pages)
+# About KieronPlay
 
-## Headings
-# H1 – Page title (usually from front matter)
-## H2 – Section
-### H3 – Sub-section
-#### H4
-##### H5
-###### H6
+Looking for a better way to top up your gaming credits? You've come to the right place.
 
-## Text Formatting
-**Bold**  
-*Italic*  
-***Bold + Italic***  
-~~Strikethrough~~  
-`Inline code`
+KieronPlay is your trusted source for game credit top-ups across all your favorite platforms. As a gamer myself, I understand how frustrating it can be to pay premium prices just to enjoy the games you love. That's why I've built a service that puts more credits in your account and more money back in your pocket.
 
-## Paragraphs & Line Breaks
-This is a paragraph.
+## Why Choose KieronPlay?
 
-This is another paragraph.
+**Better Prices, Same Reliability** - I offer competitive rates that are consistently cheaper than most top-up agencies. No hidden fees, no inflated markups - just straightforward savings on every transaction.
 
-This is a line break  
-(two spaces at the end)
+**Gamer to Gamer** - I'm not just a seller; I'm a player too. I know what matters: fast delivery, secure transactions, and responsive support when you need it.
 
-## Lists
-### Unordered
-- Item one
-- Item two
-  - Sub item
+**Wide Game Support** - Whether you're playing mobile games, PC titles, or console favorites, I've got the top-up options you need.
 
-### Ordered
-1. First
-2. Second
-3. Third
+**Quick & Secure** - Your credits are delivered promptly, and your payment information is always protected.
 
-## Links
-[External link](https://example.com)  
-[Internal link]({{ "/contact/" | relative_url }})
+Gaming should be about the experience, not breaking the bank. Let me handle your top-ups so you can focus on what really matters - playing and winning.
 
-## Images
-![Alt text](/assets/img/example.png)  
-![Alt text](/assets/img/example.png "Optional title")
-
-## Blockquotes
-> This is a quote  
->> Nested quote
-
+Ready to top up? Browse my available credits or contact me with any questions.
