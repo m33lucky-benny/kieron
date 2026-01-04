@@ -17,8 +17,8 @@ brand:
   brand_kieron4: "#FFD100" # Subway yellow
 
 nav_items:
-  - title: Home
-    url: /
+  - title: Dev's Home
+     url: https://consultant.ebiya.sg
   - title: About Me
     url: /about
   - title: Contact Us
