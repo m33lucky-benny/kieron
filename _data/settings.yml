@@ -18,7 +18,7 @@ brand:
 
 nav_items:
   - title: Dev's Home
-     url: https://consultant.ebiya.sg
+    url: https://consultant.ebiya.sg
   - title: About Me
     url: /about
   - title: Contact Us
