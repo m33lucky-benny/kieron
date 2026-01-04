@@ -1,0 +1,31 @@
+# Site settings
+title: ConsultantDev
+description: SEO-first websites that Google can understand
+image: "/assets/images/ebiya-logo.webp"
+url: "https://consultant.ebiya.sg"
+baseurl: ""
+
+# SEO
+author: ebiyaSG
+
+# Local Business Info (for structured data)
+business:
+  name: "ebiya.sg"
+  image: "/assets/images/ebiya-logo.webp"
+  telephone: "+65-8900-2228"
+  email: "bennyyuen@consultant.com"
+  priceRange: "$$$"
+  address:
+    streetAddress: "51 Old Airport Road"
+    addressLocality: "Singapore"
+    postalCode: "390051"
+    addressCountry: "SG"
+  url: "https://consultant.ebiya.sg/"
+  
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemaps
+  
+# Analytics
+#google_analytics: "G-XXXXXXXXXX"  # Your GA4 Measurement ID
+# google_tag_manager: "GTM-XXXXXXX"  # Uncomment if using GTM instead
