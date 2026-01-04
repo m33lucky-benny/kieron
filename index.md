@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: page
 title: KieronPlay - Top Up Game Credits
 ---
 
