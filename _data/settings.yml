@@ -19,7 +19,7 @@ brand:
 nav_items:
   - title: Home
     url: /
-  - title: Services
-    url: /services
+  - title: About Me
+    url: /about
   - title: Contact Us
     url: /contact
