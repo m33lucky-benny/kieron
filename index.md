@@ -1,8 +1,7 @@
------
-
-## layout: page
+—-
+layout: page
 title: KieronPlay - Top Up Game Credits
-
+—
 <style>
 /* Desktop: Two-column layout */
 @media (min-width: 1024px) {
@@ -263,7 +262,6 @@ title: KieronPlay - Top Up Game Credits
       </div>
     </section>
 
-```
 <section id="games">
   <h2 class="section-title">TOP-UP GAME CREDITS</h2>
   
@@ -369,7 +367,6 @@ title: KieronPlay - Top Up Game Credits
     <li><strong>Instant delivery:</strong> Credits delivered automatically after payment</li>
   </ul>
 </div>
-```
 
   </div>
 
@@ -425,7 +422,6 @@ title: KieronPlay - Top Up Game Credits
     <p>✨ Demo Mode • Real API integration available</p>
   </div>
 </div>
-```
 
   </div>
 </div>
