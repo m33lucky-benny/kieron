@@ -208,14 +208,15 @@ footer p {
   height: 26px;
 }
 
-/* Locked state: before ID verification */
+// Locked state: before ID verification
 .payment-bar.disabled {
   opacity: 0.4;
   filter: grayscale(1);
   pointer-events: none;
+  position: relative; // needed for ::before overlay
 }
 
-/* Optional overlay text when locked */
+// Overlay text when locked
 .payment-bar.disabled::before {
   content: "Verify your Player ID to unlock payment";
   position: absolute;
@@ -233,51 +234,41 @@ footer p {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Keep img hover effects at root level */
-  .payment-bar img {
-    height: 28px;
-    width: auto;
-    object-fit: contain;
-    opacity: 0.9;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-
-  .payment-bar img:hover {
-    opacity: 1;
-    transform: translateY(-1px);
-  }
+// Image hover effects (root level, not inside ::before)
+.payment-bar img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* Tablet and up */
+.payment-bar img:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+// Tablet and up
 @media (min-width: 640px) {
   .payment-bar img {
     height: 32px;
   }
 }
 
-/* Desktop */
+// Desktop
 @media (min-width: 1024px) {
   .payment-bar {
-    justify-content: flex-start; /* looks more premium */
+    justify-content: flex-start; // looks more premium
   }
 
   .payment-bar img {
     height: 36px;
   }
 }
-/* disable till verifify  */
+
+// Wrapper disabled state
 .payment-bar-wrapper.disabled {
   opacity: 0.4;
   pointer-events: none;
   filter: grayscale(1);
 }
-
-// .payment-bar {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   gap: 0.75rem;
-
-//   padding: 0.75rem;
-//   flex-wrap: wrap;
-
