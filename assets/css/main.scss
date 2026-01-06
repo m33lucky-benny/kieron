@@ -220,5 +220,11 @@ footer p {
     height: 36px;
   }
 }
+/* disable till verifify  */
+.payment-bar-wrapper.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  filter: grayscale(1);
+}
 
 
