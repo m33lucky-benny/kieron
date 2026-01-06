@@ -1,7 +1,8 @@
----
-layout: page
+-----
+
+## layout: page
 title: KieronPlay - Top Up Game Credits
----
+
 <style>
 /* Desktop: Two-column layout */
 @media (min-width: 1024px) {
@@ -34,6 +35,16 @@ title: KieronPlay - Top Up Game Credits
   
   .checker-column {
     margin-top: 2rem;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .id-checker-card {
+    padding: 1.5rem;
+  }
+  
+  .checker-form {
+    padding: 1rem;
   }
 }
 
@@ -43,6 +54,7 @@ title: KieronPlay - Top Up Game Credits
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .checker-header {
@@ -99,6 +111,8 @@ title: KieronPlay - Top Up Game Credits
   border-radius: 10px;
   font-size: 0.875rem;
   transition: all 0.3s;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .form-group select:focus,
@@ -249,6 +263,7 @@ title: KieronPlay - Top Up Game Credits
       </div>
     </section>
 
+```
 <section id="games">
   <h2 class="section-title">TOP-UP GAME CREDITS</h2>
   
@@ -354,6 +369,7 @@ title: KieronPlay - Top Up Game Credits
     <li><strong>Instant delivery:</strong> Credits delivered automatically after payment</li>
   </ul>
 </div>
+```
 
   </div>
 
@@ -371,6 +387,7 @@ title: KieronPlay - Top Up Game Credits
         <p>Check your game ID before top-up</p>
       </div>
 
+```
   <div class="checker-form">
     <div class="form-group">
       <label for="gameSelect">Select Game</label>
@@ -408,6 +425,7 @@ title: KieronPlay - Top Up Game Credits
     <p>✨ Demo Mode • Real API integration available</p>
   </div>
 </div>
+```
 
   </div>
 </div>
@@ -448,16 +466,28 @@ title: KieronPlay - Top Up Game Credits
 
   async function checkPlayerId() {
     const game = gameSelect.value;
-    const userId = userIdInput.value.trim();
-    const zoneId = zoneIdInput.value.trim();
+    // Sanitize inputs - remove HTML/script tags and trim
+    const userId = sanitizeInput(userIdInput.value.trim());
+    const zoneId = sanitizeInput(zoneIdInput.value.trim());
 
     if (!game || !userId) {
       showResult('error', '❌ Missing Info', 'Please select a game and enter player ID');
       return;
     }
 
+    // Validate: only alphanumeric and basic characters
+    if (!isValidInput(userId)) {
+      showResult('error', '❌ Invalid Characters', 'Player ID can only contain letters, numbers, and basic punctuation');
+      return;
+    }
+
     if (userId.length < 5) {
       showResult('error', '❌ Invalid ID', 'Player ID must be at least 5 characters');
+      return;
+    }
+
+    if (userId.length > 50) {
+      showResult('error', '❌ ID Too Long', 'Player ID must be less than 50 characters');
       return;
     }
 
@@ -482,29 +512,57 @@ title: KieronPlay - Top Up Game Credits
     `;
   }
 
+  // Sanitize input to prevent XSS
+  function sanitizeInput(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // Validate input format (alphanumeric, spaces, hyphens, underscores only)
+  function isValidInput(str) {
+    return /^[a-zA-Z0-9\s\-_]+$/.test(str);
+  }
+
   function showResult(type, title, username, details = null) {
     let html = `<div class="result-box ${type}">`;
-    html += `<div class="result-title">${title}</div>`;
+    // Escape HTML to prevent XSS
+    const safeTitle = escapeHtml(title);
+    const safeUsername = escapeHtml(username);
+    
+    html += `<div class="result-title">${safeTitle}</div>`;
     
     if (type === 'success' && details) {
+      const safeGame = escapeHtml(details.game);
+      const safeUserId = escapeHtml(details.userId);
       html += `
         <div class="username-display">
           <div class="username-label">Username</div>
-          <div class="username-value">${username}</div>
+          <div class="username-value">${safeUsername}</div>
         </div>
         <div class="result-content" style="margin-top: 0.5rem;">
-          <strong>Game:</strong> ${details.game}<br>
-          <strong>ID:</strong> ${details.userId}
+          <strong>Game:</strong> ${safeGame}<br>
+          <strong>ID:</strong> ${safeUserId}
         </div>
       `;
     } else {
-      html += `<div class="result-content">${username}</div>`;
+      html += `<div class="result-content">${safeUsername}</div>`;
     }
     
     html += `</div>`;
     
     resultArea.innerHTML = html;
     resultArea.style.display = 'block';
+  }
+
+  // Escape HTML to prevent XSS when displaying user input
+  function escapeHtml(unsafe) {
+    return unsafe
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
   }
 
   userIdInput.addEventListener('keypress', (e) => {
