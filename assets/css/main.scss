@@ -178,7 +178,7 @@ footer p {
 }
 
 // ----------------------------------------
-//  payments bar
+//  payments bar background: var(--surface1);
 // ----------------------------------------
 .payment-bar {
   display: flex;
@@ -189,7 +189,7 @@ footer p {
   padding: 0.75rem;
   flex-wrap: wrap;
 
-  background: var(--surface1);
+  
 
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.08);
