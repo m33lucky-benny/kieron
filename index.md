@@ -552,6 +552,14 @@ title: KieronPlay - Top Up Game Credits
     
     resultArea.innerHTML = html;
     resultArea.style.display = 'block';
+
+    // ✅ Enable payment after successful ID verification
+  if (type === 'success') {
+    const paymentBar = document.getElementById('paymentBar');
+    if (paymentBar) {
+      paymentBar.classList.remove('disabled');
+    }
+  }
   }
 
   // Escape HTML to prevent XSS when displaying user input
