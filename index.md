@@ -420,6 +420,9 @@ title: KieronPlay - Top Up Game Credits
   <div class="checker-info">
     <p>✨ Demo Mode • Real API integration available</p>
   </div>
+   <div class="payment-bar-wrapper">
+    {% include payment.html %}
+  </div>
 </div>
 <!-- ✅ PAYMENT BAR (NOW VISIBLE) -->
   <div class="payment-bar-wrapper">
