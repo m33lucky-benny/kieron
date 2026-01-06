@@ -181,6 +181,11 @@ footer p {
 //  payments bar background: var(--surface1);
 // ----------------------------------------
 .payment-bar {
+  display: flex;                // enable flex
+  flex-direction: column;       // stack title and icons vertically
+  align-items: center;          // horizontal center
+  justify-content: center;      // vertical center (if height > content)
+  text-align: center; 
   margin-top: 1.5rem;
   padding: 1rem 1.25rem;
   border-radius: 12px;
