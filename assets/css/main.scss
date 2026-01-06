@@ -177,5 +177,48 @@ footer p {
   letter-spacing: 0.03em;
 }
 
+// ----------------------------------------
+//  payments bar
+// ----------------------------------------
+.payment-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.75rem 0;
+  flex-wrap: wrap; /* mobile safety */
+
+  img {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  img:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  .payment-bar img {
+    height: 32px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .payment-bar {
+    justify-content: flex-start; /* looks more premium */
+  }
+
+  .payment-bar img {
+    height: 36px;
+  }
+}
 
 
