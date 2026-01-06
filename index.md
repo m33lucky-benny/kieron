@@ -1,8 +1,7 @@
------
-
-## layout: page
+---
+layout: page
 title: KieronPlay - Top Up Game Credits
-
+---
 <style>
 /* Desktop: Two-column layout */
 @media (min-width: 1024px) {
