@@ -384,7 +384,6 @@ title: KieronPlay - Top Up Game Credits
         <p>Check your game ID before top-up</p>
       </div>
 
-```
   <div class="checker-form">
     <div class="form-group">
       <label for="gameSelect">Select Game</label>
