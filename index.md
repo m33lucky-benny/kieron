@@ -421,6 +421,10 @@ title: KieronPlay - Top Up Game Credits
     <p>✨ Demo Mode • Real API integration available</p>
   </div>
 </div>
+<!-- ✅ PAYMENT BAR (NOW VISIBLE) -->
+  <div class="payment-bar-wrapper">
+    {% include payment.html %}
+  </div>
 
   </div>
 </div>
@@ -549,8 +553,6 @@ title: KieronPlay - Top Up Game Credits
     resultArea.innerHTML = html;
     resultArea.style.display = 'block';
   }
-
-  {% include payment.html %}
 
   // Escape HTML to prevent XSS when displaying user input
   function escapeHtml(unsafe) {
