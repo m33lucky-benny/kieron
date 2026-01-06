@@ -227,15 +227,14 @@ footer p {
   font-size: 0.8rem;
   text-align: center;
   padding: 0 1rem;
-}
 
-  
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.08);
-
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
 
-  img {
+/* Keep img hover effects at root level */
+  .payment-bar img {
     height: 28px;
     width: auto;
     object-fit: contain;
@@ -243,7 +242,7 @@ footer p {
     transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
-  img:hover {
+  .payment-bar img:hover {
     opacity: 1;
     transform: translateY(-1px);
   }
